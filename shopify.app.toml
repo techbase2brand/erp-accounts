@@ -1,0 +1,27 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "sahjad-kevin"
+client_id = "e6458d3a10a7b7f9ec29c900fd9fa3e3"
+application_url = "https://utilization-solving-indexes-lovely.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://utilization-solving-indexes-lovely.trycloudflare.com/auth/callback",
+  "https://utilization-solving-indexes-lovely.trycloudflare.com/auth/shopify/callback",
+  "https://utilization-solving-indexes-lovely.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-07"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "sahjad-ext.myshopify.com"
