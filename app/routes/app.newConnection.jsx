@@ -14,12 +14,12 @@ export default function AdditionalPage() {
 
   const onChooseConnectionHandle = (event) => {
     setConnectionValue(event.target.value);
-    console.log("ConnectionValue:", connectionValue);
+    console.log("ConnectionValue:", event.target.value);
   };
 
   const onIntegrateHandle = (event) => {
     setIntegrateValue(event.target.value);
-    console.log("IntegrateValue:", integrateValue);
+    console.log("IntegrateValue:", event.target.value);
   };
 
   useEffect(() => {
@@ -34,47 +34,43 @@ export default function AdditionalPage() {
         setPlanData(plans);
         setAlldata(dataa);
         console.log("dataaa", alldata);
-        // console.log("dataaaaaaaa" ,data?.platforms)
       } catch (error) {
         console.log("errorrrrrrr", error);
       }
     };
-
     fetchData();
-    // console.log("dataaa", alldata);
+    console.log("dataaa", alldata);
     // console.log("platformDataaa", platformData);
     // console.log("planDataaa", planData);
   }, []);
 
   const filteredPlanData = planData?.filter(
-    (value) => value?.plugins[0]?.id === "99ba5e0e-dad2-454b-9ce4-5e36920adb0d"
+    (value) =>
+      value?.plugins[0]?.id === connectionValue && value?.status === "active"
   );
 
   const handleCheckout = async () => {
-    // try {
-    //   const response = await axios.post(
-    //     "https://saasintegrator.online/api/v1/connection",
-    //     {
-    //       plan_id: integrateValue,
-    //     }
-    //   );
-    //   console.log("responseeeeeeeeeeeeeeeeeeeeeeeeeeee", response);
-    // } catch (error) {
-    //   console.log("errorrrrrrrrrrr" ,error)
-    // }
-    console.log("handleCheckout");
+    try {
+      const response = await axios.post(
+        "https://saasintegrator.online/api/v1/connection",
+        {
+          plan_id: integrateValue,
+        }
+      );
+      console.log("responseeeeeeeeeeeeeeeeeeeeeeeeeeee", response);
+      alert("Plan successfully added")
+    } catch (error) {
+      console.log("errorrrrrrrrrrr", error);
+    }
   };
 
   return (
     <>
-      <div style={{ paddingBottom: "1rem", paddingLeft: "2rem" }}>
+      <div style={{ padding: "1rem" }}>
         <Breadcrumb
           items={[
             {
               title: <Link to="/app">Home</Link>,
-            },
-            {
-              title: <Link to="/app">My Connenctions</Link>,
             },
             {
               title: "Create",
@@ -82,18 +78,13 @@ export default function AdditionalPage() {
           ]}
         />
       </div>
-      <Layout>
-        <Layout.Header style={{ background: "#fff" }}>
+      <Layout style={{ padding: "1rem" }}>
+        <Card style={{ background: "#fff" }}>
           <Typography.Title level={4}>Create Connection</Typography.Title>
-        </Layout.Header>
+        </Card>
         <Layout.Content>
           <Card>
-            <div
-            // style={{
-            //   display: "flex",
-            //   gap: "3rem",
-            // }}
-            >
+            <div>
               <div
                 className="connection-tabs-os"
                 style={{
@@ -156,7 +147,12 @@ export default function AdditionalPage() {
                                     gap: "8px",
                                   }}
                                 >
-                                  <span>{value.display_name}</span>
+                                  <Typography.Title
+                                    level={5}
+                                    style={{ margin: "0" }}
+                                  >
+                                    {value.display_name}
+                                  </Typography.Title>
                                   <span
                                     style={{
                                       display: "flex",
@@ -194,36 +190,50 @@ export default function AdditionalPage() {
                 {createConnectionTab === "tab-os-2" && (
                   <div>
                     <Typography.Title level={4}>Integrate</Typography.Title>
-                    <Radio.Group
-                      onChange={onIntegrateHandle}
-                      value={integrateValue}
-                      style={{ width: "100%" }}
-                    >
-                      {filteredPlanData.map((value, index) => (
+                    {filteredPlanData.map((value, index) => (
+                      <div
+                        style={{
+                          paddingBottom: "0.8rem",
+                        }}
+                      >
+                        <Radio.Group
+                          onChange={onIntegrateHandle}
+                          value={integrateValue}
+                          style={{ width: "100%" }}
+                        >
+                          <div
+                            style={{
+                              display: "flex",
+                              width: "100%",
+                            }}
+                            key={value.id}
+                          >
+                            <Radio value={value.id}>
+                              <Typography.Title
+                                level={5}
+                                style={{ margin: "0" }}
+                              >
+                                {value?.plugins[0]?.display_name}
+                              </Typography.Title>
+                            </Radio>
+                          </div>
+                        </Radio.Group>
                         <div
                           style={{
                             display: "flex",
-                            width: "100%",
-                            paddingBottom: "0.8rem",
+                            alignItems: "center",
+                            gap: "8px",
                           }}
-                          key={value.id}
                         >
-                          <Radio value={value.id}>
-                            <div
-                              style={{
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "8px",
-                              }}
-                            >
-                              {/* <span>{value?.name}</span> */}
-                              <span>{value?.plugins[0]?.display_name}</span>
-                              <span>{value?.plugins[0]?.description}</span>
-                            </div>
-                          </Radio>
+                          <div>
+                            <span>{value?.plugins[0]?.description}</span>
+                          </div>
+                          <div>
+                            <span>{value?.price_formatted}</span>
+                          </div>
                         </div>
-                      ))}
-                    </Radio.Group>
+                      </div>
+                    ))}
                     <div style={{ paddingTop: "1rem" }}>
                       <Button type="primary" onClick={handleCheckout}>
                         Checkout

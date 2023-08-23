@@ -2,7 +2,7 @@
 
 name = "kavin-app-os"
 client_id = "ec8e76dae978ed60a8b0bf773c1ccbf0"
-application_url = "https://charitable-hawaii-adventures-pst.trycloudflare.com"
+application_url = "https://uw-hyundai-jewish-diamond.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,9 +11,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://charitable-hawaii-adventures-pst.trycloudflare.com/auth/callback",
-  "https://charitable-hawaii-adventures-pst.trycloudflare.com/auth/shopify/callback",
-  "https://charitable-hawaii-adventures-pst.trycloudflare.com/api/auth/callback"
+  "https://uw-hyundai-jewish-diamond.trycloudflare.com/auth/callback",
+  "https://uw-hyundai-jewish-diamond.trycloudflare.com/auth/shopify/callback",
+  "https://uw-hyundai-jewish-diamond.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

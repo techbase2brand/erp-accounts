@@ -7,13 +7,10 @@ const menu = () => {
   return (
     <div className="menu-section-os">
       <Link to="/app" style={{textDecoration: "none"}}>
-        <Title style={{color: "#fff"}} level={5}>Dashboard</Title>
-      </Link>
-      <Link to="/app" style={{textDecoration: "none"}}>
-        <Title style={{color: "#fff"}} level={5}>My Connections</Title>
+        <Title style={{color: "#fff"}} level={4}>Dashboard</Title>
       </Link>
       <Link to="/app/dataList" style={{textDecoration: "none"}}>
-        <Title style={{color: "#fff"}} level={5}>Data</Title>
+        <Title style={{color: "#fff"}} level={4}>Configurations</Title>
       </Link>
     </div>
   );

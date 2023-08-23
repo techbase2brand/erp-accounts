@@ -121,11 +121,7 @@ export default function Index() {
       render: (_, { tags }) => (
         <>
           {tags.map((tag) => {
-            return (
-              <Typography key={tag}>
-                {tag}
-              </Typography>
-            );
+            return <Typography key={tag}>{tag}</Typography>;
           })}
         </>
       ),
@@ -317,7 +313,7 @@ export default function Index() {
   return (
     <Layout>
       <Layout.Content style={{ padding: "24px" }}>
-        <div
+        {/* <div
           style={{
             display: "flex",
             justifyContent: "flex-end",
@@ -327,7 +323,22 @@ export default function Index() {
           <Link to="/app/newConnection">
             <Button type="primary">+ Build New Connection</Button>
           </Link>
-        </div>
+        </div> */}
+        <Card>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center"
+            }}
+          >
+            <Typography.Title level={4} style={{margin: "0"}}>My Connections</Typography.Title>
+
+            <Link to="/app/newConnection">
+              <Button type="primary">+ Build New Connection</Button>
+            </Link>
+          </div>
+        </Card>
         <Card>
           <Table columns={columns} dataSource={data} />
         </Card>

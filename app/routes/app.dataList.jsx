@@ -98,139 +98,6 @@ const dataList = () => {
       price: "20k",
       tags: ["2h ago"],
     },
-    {
-      key: "6",
-      name: "Vikash Sony",
-      id: 28,
-      price: "20k",
-      tags: ["2h ago"],
-    },
-    {
-      key: "7",
-      name: "Md Sahjad Ansari",
-      id: 23,
-      price: "20k",
-      tags: ["3m ago"],
-    },
-    {
-      key: "8",
-      name: "Om Parkash",
-      id: 25,
-      price: "20k",
-      tags: ["1h ago"],
-    },
-    {
-      key: "9",
-      name: "Vikash Sony",
-      id: 28,
-      price: "20k",
-      tags: ["2h ago"],
-    },
-    {
-      key: "10",
-      name: "test",
-      id: 12,
-      price: "20k",
-      tags: ["2h ago"],
-    },
-    {
-      key: "11",
-      name: "Test1",
-      id: 13,
-      price: "20k",
-      tags: ["2h ago"],
-    },
-    {
-      key: "12",
-      name: "Vikash Sony",
-      id: 28,
-      price: "20k",
-      tags: ["2h ago"],
-    },
-    {
-      key: "13",
-      name: "Md Sahjad Ansari",
-      id: 23,
-      price: "20k",
-      tags: ["3m ago"],
-    },
-    {
-      key: "14",
-      name: "Om Parkash",
-      id: 25,
-      price: "20k",
-      tags: ["1h ago"],
-    },
-    {
-      key: "15",
-      name: "Vikash Sony",
-      id: 28,
-      price: "20k",
-      tags: ["2h ago"],
-    },
-    {
-      key: "16",
-      name: "test",
-      id: 12,
-      price: "20k",
-      tags: ["2h ago"],
-    },
-    {
-      key: "17",
-      name: "Test1",
-      id: 13,
-      price: "20k",
-      tags: ["2h ago"],
-    },
-    {
-      key: "18",
-      name: "Vikash Sony",
-      id: 28,
-      price: "20k",
-      tags: ["2h ago"],
-    },
-    {
-      key: "19",
-      name: "Md Sahjad Ansari",
-      id: 23,
-      price: "20k",
-      tags: ["3m ago"],
-    },
-    {
-      key: "20",
-      name: "Om Parkash",
-      id: 25,
-      price: "20k",
-      tags: ["1h ago"],
-    },
-    {
-      key: "21",
-      name: "Vikash Sony",
-      id: 28,
-      price: "20k",
-      tags: ["2h ago"],
-    },
-    {
-      key: "22",
-      name: "test",
-      id: 12,
-      price: "20k",
-      tags: ["2h ago"],
-    },
-    {
-      key: "23",
-      name: "Test1",
-      id: 13,
-      price: "20k",
-      tags: ["2h ago"],
-    },
-    {
-      key: "24",
-      name: "Vikash Sony",
-      id: 28,
-      price: "20k",
-      tags: ["2h ago"],
-    },
   ];
 
   const handleTabData = (value) => {
@@ -240,7 +107,7 @@ const dataList = () => {
 
   return (
     <div>
-      <Card>
+      <Card style={{ margin: "24px 24px 0" }}>
         <div
           style={{
             display: "flex",
@@ -249,76 +116,58 @@ const dataList = () => {
             flexWrap: "wrap",
           }}
         >
-          <Typography
-            level={5}
+          <Button
             style={{
-              margin: "0",
-              cursor: "pointer",
               color: tabs === "tab-os-1" ? "#1677ff" : "",
             }}
             onClick={() => {
               handleTabData("tab-os-1");
             }}
           >
-            Attribute
-          </Typography>
-          <Typography
-            level={5}
+            Stores
+          </Button>
+          <Button
             style={{
-              margin: "0",
-              cursor: "pointer",
               color: tabs === "tab-os-2" ? "#1677ff" : "",
             }}
             onClick={() => {
               handleTabData("tab-os-2");
             }}
           >
-            Category
-          </Typography>
-          <Typography
-            level={5}
+            Currencies
+          </Button>
+          <Button
             style={{
-              margin: "0",
-              cursor: "pointer",
               color: tabs === "tab-os-3" ? "#1677ff" : "",
             }}
             onClick={() => {
               handleTabData("tab-os-3");
             }}
           >
-            Currency
-          </Typography>
-          <Typography
-            level={5}
+            Taxes
+          </Button>
+          <Button
             style={{
-              margin: "0",
-              cursor: "pointer",
               color: tabs === "tab-os-4" ? "#1677ff" : "",
             }}
             onClick={() => {
               handleTabData("tab-os-4");
             }}
           >
-            Customer
-          </Typography>
-          <Typography
-            level={5}
+            Attributes
+          </Button>
+          <Button
             style={{
-              margin: "0",
-              cursor: "pointer",
               color: tabs === "tab-os-5" ? "#1677ff" : "",
             }}
             onClick={() => {
               handleTabData("tab-os-5");
             }}
           >
-            Order
-          </Typography>
-          <Typography
-            level={5}
+            Order/Invoices
+          </Button>
+          <Button
             style={{
-              margin: "0",
-              cursor: "pointer",
               color: tabs === "tab-os-6" ? "#1677ff" : "",
             }}
             onClick={() => {
@@ -326,59 +175,57 @@ const dataList = () => {
             }}
           >
             Payment Methods
-          </Typography>
-          <Typography
-            level={5}
+          </Button>
+          <Button
             style={{
-              margin: "0",
-              cursor: "pointer",
               color: tabs === "tab-os-7" ? "#1677ff" : "",
             }}
             onClick={() => {
               handleTabData("tab-os-7");
             }}
           >
-            Product
-          </Typography>
-          <Typography
-            level={5}
+            Accounts
+          </Button>
+          <Button
             style={{
-              margin: "0",
-              cursor: "pointer",
               color: tabs === "tab-os-8" ? "#1677ff" : "",
             }}
             onClick={() => {
               handleTabData("tab-os-8");
             }}
           >
-            Stock
-          </Typography>
-          <Typography
-            level={5}
+            Products
+          </Button>
+          <Button
             style={{
-              margin: "0",
-              cursor: "pointer",
               color: tabs === "tab-os-9" ? "#1677ff" : "",
             }}
             onClick={() => {
               handleTabData("tab-os-9");
             }}
           >
-            Store
-          </Typography>
-          <Typography
-            level={5}
+            Stock/Inventory
+          </Button>
+          <Button
             style={{
-              margin: "0",
-              cursor: "pointer",
               color: tabs === "tab-os-10" ? "#1677ff" : "",
             }}
             onClick={() => {
               handleTabData("tab-os-10");
             }}
           >
-            Tax
-          </Typography>
+            Customers
+          </Button>
+          <Button
+            style={{
+              color: tabs === "tab-os-11" ? "#1677ff" : "",
+            }}
+            onClick={() => {
+              handleTabData("tab-os-11");
+            }}
+          >
+            Tyre Pricing
+          </Button>
         </div>
       </Card>
       <Layout>
@@ -388,15 +235,16 @@ const dataList = () => {
               <Table columns={columns} dataSource={data} />
             </Card>
           )}
-          {tabs === "tab-os-2" && <Card>TabContent 2</Card>}
-          {tabs === "tab-os-3" && <Card>TabContent 3</Card>}
-          {tabs === "tab-os-4" && <Card>TabContent 4</Card>}
-          {tabs === "tab-os-5" && <Card>TabContent 5</Card>}
-          {tabs === "tab-os-6" && <Card>TabContent 6</Card>}
-          {tabs === "tab-os-7" && <Card>TabContent 7</Card>}
-          {tabs === "tab-os-8" && <Card>TabContent 8</Card>}
-          {tabs === "tab-os-9" && <Card>TabContent 9</Card>}
-          {tabs === "tab-os-10" && <Card>TabContent 10</Card>}
+          {tabs === "tab-os-2" && <Card>Currencies</Card>}
+          {tabs === "tab-os-3" && <Card>Taxes</Card>}
+          {tabs === "tab-os-4" && <Card>Attributes</Card>}
+          {tabs === "tab-os-5" && <Card>Order/Invoices</Card>}
+          {tabs === "tab-os-6" && <Card>Payment Methods</Card>}
+          {tabs === "tab-os-7" && <Card>Accounts</Card>}
+          {tabs === "tab-os-8" && <Card>Products</Card>}
+          {tabs === "tab-os-9" && <Card>Stock/Inventory</Card>}
+          {tabs === "tab-os-10" && <Card>Customers</Card>}
+          {tabs === "tab-os-11" && <Card>Tyre Pricing</Card>}
         </Layout.Content>
       </Layout>
     </div>
