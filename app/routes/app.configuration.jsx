@@ -1,58 +1,175 @@
 import React, { useState } from "react";
-import { Card, Layout, Typography, Radio, Space, Button } from "antd";
-import { Link } from "@remix-run/react";
-import { Breadcrumb } from "antd";
+import { Layout, Button, Card } from "antd";
+import Stores from "./components/configurations/stores";
+import Currencies from "./components/configurations/currencies";
+import Taxes from "./components/configurations/taxes";
+import Attributes from "./components/configurations/Attributes";
+import Paymentmethods from "./components/configurations/paymentmethods";
+import Products from "./components/configurations/products";
+import Customers from "./components/configurations/customers";
+import Categories from "./components/configurations/categories";
 
-export default function AdditionalPage() {
-  const [value, setValue] = useState(1);
+const dataList = () => {
+  const [tabs, setTabs] = useState("tab-os-1");
 
-  const onChangeHandle = (event) => {
-    console.log("'radio checked:", event.target.value);
-    setValue(event.target.value);
+  const handleTabData = (value) => {
+    setTabs(value);
+    // console.log("valuessss", value)
   };
 
   return (
-    <>
-      <div style={{ paddingBottom: "1rem", paddingLeft: "2rem" }}>
-        <Breadcrumb
-          items={[
-            {
-              title: <Link to="/app">Home</Link>,
-            },
-            {
-              title: <Link to="/app">My Connenctions</Link>,
-            },
-            {
-              title: "Create",
-            },
-          ]}
-        />
-      </div>
+    <div>
+      <Card style={{ margin: "24px 24px 0" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "1rem 1.5rem",
+            flexWrap: "wrap",
+          }}
+        >
+          <Button
+            style={{
+              color: tabs === "tab-os-1" ? "#1677ff" : "",
+            }}
+            onClick={() => {
+              handleTabData("tab-os-1");
+            }}
+          >
+            Stores
+          </Button>
+          <Button
+            style={{
+              color: tabs === "tab-os-2" ? "#1677ff" : "",
+            }}
+            onClick={() => {
+              handleTabData("tab-os-2");
+            }}
+          >
+            Currencies
+          </Button>
+          <Button
+            style={{
+              color: tabs === "tab-os-3" ? "#1677ff" : "",
+            }}
+            onClick={() => {
+              handleTabData("tab-os-3");
+            }}
+          >
+            Taxes
+          </Button>
+          <Button
+            style={{
+              color: tabs === "tab-os-4" ? "#1677ff" : "",
+            }}
+            onClick={() => {
+              handleTabData("tab-os-4");
+            }}
+          >
+            Attributes
+          </Button>
+          <Button
+            style={{
+              color: tabs === "tab-os-5" ? "#1677ff" : "",
+            }}
+            onClick={() => {
+              handleTabData("tab-os-5");
+            }}
+          >
+            Order/Invoices
+          </Button>
+          <Button
+            style={{
+              color: tabs === "tab-os-6" ? "#1677ff" : "",
+            }}
+            onClick={() => {
+              handleTabData("tab-os-6");
+            }}
+          >
+            Payment Methods
+          </Button>
+          <Button
+            style={{
+              color: tabs === "tab-os-7" ? "#1677ff" : "",
+            }}
+            onClick={() => {
+              handleTabData("tab-os-7");
+            }}
+          >
+            Accounts
+          </Button>
+          <Button
+            style={{
+              color: tabs === "tab-os-8" ? "#1677ff" : "",
+            }}
+            onClick={() => {
+              handleTabData("tab-os-8");
+            }}
+          >
+            Products
+          </Button>
+          <Button
+            style={{
+              color: tabs === "tab-os-9" ? "#1677ff" : "",
+            }}
+            onClick={() => {
+              handleTabData("tab-os-9");
+            }}
+          >
+            Stock/Inventory
+          </Button>
+          <Button
+            style={{
+              color: tabs === "tab-os-10" ? "#1677ff" : "",
+            }}
+            onClick={() => {
+              handleTabData("tab-os-10");
+            }}
+          >
+            Customers
+          </Button>
+          <Button
+            style={{
+              color: tabs === "tab-os-11" ? "#1677ff" : "",
+            }}
+            onClick={() => {
+              handleTabData("tab-os-11");
+            }}
+          >
+            Tyre Pricing
+          </Button>
+          <Button
+            style={{
+              color: tabs === "tab-os-12" ? "#1677ff" : "",
+            }}
+            onClick={() => {
+              handleTabData("tab-os-12");
+            }}
+          >
+            Categories
+          </Button>
+        </div>
+      </Card>
       <Layout>
-        <Layout.Header style={{ background: "#0958d9" }}>
-          <Typography.Title level={2} style={{ color: "#ffffff" }}>
-            Create Connection
-          </Typography.Title>
-        </Layout.Header>
-        <Layout.Content>
+        <Layout.Content style={{ padding: "24px" }}>
           <Card>
-            <Radio.Group onChange={onChangeHandle} value={value}>
-              <Space direction="vertical">
-                <Radio value={1}>Option A</Radio>
-                <Radio value={2}>Option B</Radio>
-                <Radio value={3}>Option C</Radio>
-                <Radio value={4}>Option D</Radio>
-                <Radio value={5}>Option E</Radio>
-              </Space>
-            </Radio.Group>
-          </Card>
-          <Card>
-            <Link to="/app" rel="home">
-              <Button type="primary"> Home</Button>
-            </Link>
+            {tabs === "tab-os-1" && <Stores />}
+            {tabs === "tab-os-2" && <Currencies />}
+            {tabs === "tab-os-3" && <Taxes />}
+            {tabs === "tab-os-4" && <Attributes />}
+            {tabs === "tab-os-5" && "Order/Invoices"}
+            {tabs === "tab-os-6" && <Paymentmethods />}
+            {tabs === "tab-os-7" && "Accounts"}
+            {tabs === "tab-os-8" && <Products />}
+            {tabs === "tab-os-9" && "Stock/Inventory"}
+            {tabs === "tab-os-10" && <Customers />}
+            {tabs === "tab-os-11" && "Tyre Pricing"}
+            {tabs === "tab-os-12" && <Categories />}
           </Card>
         </Layout.Content>
       </Layout>
-    </>
+    </div>
   );
-}
+};
+
+export default dataList;

@@ -2,7 +2,7 @@
 
 name = "kavin-app-os"
 client_id = "ec8e76dae978ed60a8b0bf773c1ccbf0"
-application_url = "https://uw-hyundai-jewish-diamond.trycloudflare.com"
+application_url = "https://mirror-highs-cycles-bare.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,9 +11,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://uw-hyundai-jewish-diamond.trycloudflare.com/auth/callback",
-  "https://uw-hyundai-jewish-diamond.trycloudflare.com/auth/shopify/callback",
-  "https://uw-hyundai-jewish-diamond.trycloudflare.com/api/auth/callback"
+  "https://mirror-highs-cycles-bare.trycloudflare.com/auth/callback",
+  "https://mirror-highs-cycles-bare.trycloudflare.com/auth/shopify/callback",
+  "https://mirror-highs-cycles-bare.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

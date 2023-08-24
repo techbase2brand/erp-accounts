@@ -329,12 +329,14 @@ export default function Index() {
             style={{
               display: "flex",
               justifyContent: "space-between",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
-            <Typography.Title level={4} style={{margin: "0"}}>My Connections</Typography.Title>
+            <Typography.Title level={4} style={{ margin: "0" }}>
+              My Connections
+            </Typography.Title>
 
-            <Link to="/app/newConnection">
+            <Link to="/app/newconnection">
               <Button type="primary">+ Build New Connection</Button>
             </Link>
           </div>

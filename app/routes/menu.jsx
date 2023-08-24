@@ -9,7 +9,7 @@ const menu = () => {
       <Link to="/app" style={{textDecoration: "none"}}>
         <Title style={{color: "#fff"}} level={4}>Dashboard</Title>
       </Link>
-      <Link to="/app/dataList" style={{textDecoration: "none"}}>
+      <Link to="/app/configuration" style={{textDecoration: "none"}}>
         <Title style={{color: "#fff"}} level={4}>Configurations</Title>
       </Link>
     </div>
